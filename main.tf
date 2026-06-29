@@ -127,3 +127,5 @@ resource "azurerm_virtual_machine_data_disk_attachment" "disk_attach" {
 output "vm_public_ip" {
   value = azurerm_public_ip.pip.ip_address
 }
+
+# Test CI/CD Pipeline
