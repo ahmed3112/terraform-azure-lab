@@ -1,4 +1,11 @@
 terraform {
+  backend "azurerm" {
+    resource_group_name  = "rg-terraform-backend"
+    storage_account_name = "tfstateahmed3112"
+    container_name       = "tfstate"
+    key                  = "prod.terraform.tfstate"
+  }
+
   required_version = ">= 1.5"
 
   required_providers {
@@ -8,7 +15,6 @@ terraform {
     }
   }
 }
-
 provider "azurerm" {
   features {}
 
@@ -112,7 +118,7 @@ resource "azurerm_managed_disk" "data_disk" {
 
   storage_account_type = "Standard_LRS"
   create_option        = "Empty"
-  disk_size_gb         = 128
+  disk_size_gb         = 256
 }
 
 # Attach Data Disk to VM
