@@ -22,7 +22,7 @@ provider "azurerm" {
 }
 
 resource "azurerm_resource_group" "rg" {
-  name     = "rg-ahmedIT-terraform"
+  name     = "rg-Hana"
  location = "West US 2"
 }
 resource "azurerm_virtual_network" "vnet" {
